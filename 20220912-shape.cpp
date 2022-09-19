@@ -24,6 +24,7 @@ class Shape{
             this->breadth = 0;
         }
 
+        // member function to calculate area of rectangle
         float perimeter(){
             if(radius == 0){
                 return 2*(length + breadth);
