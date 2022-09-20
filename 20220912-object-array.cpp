@@ -68,7 +68,10 @@ class Person{
         }
 
         // parameterized constructor
-        Person(string name, int age, string address, float basic_salary, float house_rent_allowance, float medical_allowance, float dearness_allowance, float income_tax){
+        Person(string name, int age, string address, float basic_salary, 
+        float house_rent_allowance, float medical_allowance, float dearness_allowance, 
+        float income_tax){
+
             strcpy(this->name, name.c_str());
             this->age = age;
             strcpy(this->address, address.c_str());
@@ -77,7 +80,8 @@ class Person{
             this->salary.medical_allowance = medical_allowance;
             this->salary.dearness_allowance = dearness_allowance;
             this->salary.income_tax = income_tax;
-            this->salary.gross_salary = basic_salary + house_rent_allowance + medical_allowance + dearness_allowance - income_tax;
+            this->salary.gross_salary = (basic_salary + house_rent_allowance + 
+            medical_allowance + dearness_allowance - income_tax);
 
             // increment employee count and add age to array
             employee_ages[employee_count] = this->age;
