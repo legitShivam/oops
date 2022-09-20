@@ -12,25 +12,23 @@ class Shape{
         Shape(float length, float breadth){
             this->length = length;
             this->breadth = breadth;
+
+            this->radius = 0;
         }
 
         // constructor for circle
         Shape(float radius){
             this->radius = radius;
+
+            this->length = 0;
+            this->breadth = 0;
         }
 
-        // constructor for circle and rectangle
-        Shape(float radius, float length, float breadth){
-            this->radius = radius;
-            this->length = length;
-            this->breadth = breadth;
-        }
+        float perimeter(){
+            if(radius == 0){
+                return 2*(length + breadth);
+            }
 
-        float rectPerimeter(){
-            return 2*(length + breadth);
-        }
-
-        float circlePerimeter(){
             return 2*3.14*radius;
         }
 
@@ -43,10 +41,10 @@ class Shape{
 // driver 
 int main()
 {
-    Shape s(50, 15, 20);
+    Shape circle(50), rectangle(10, 20);
 
-    cout << "Perimeter of Rectangle: " << s.rectPerimeter() << endl;
-    cout << "Perimeter of Circle: " << s.circlePerimeter() << endl;
+    cout << "Perimeter of Rectangle: " << rectangle.perimeter() << endl;
+    cout << "Perimeter of Circle: " << circle.perimeter() << endl << endl;
 
     return 0;
 }
